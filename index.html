@@ -1,0 +1,60 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- *** UPDATED TITLE *** -->
+    <title>Selloane Chalale | Business Analyst | Feature Analyst</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-content container">
+            <a href="index.html" class="site-title">Selloane Chalale</a>
+            <nav class="main-navigation">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <!-- *** ADDED EDUCATION LINK *** -->
+                    <li><a href="education.html">Education</a></li>
+                    <!-- <li><a href="workexperience.html>">Work Experience</a></li> -->
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+      <!-- *** UPDATED HERO SECTION STRUCTURE *** -->
+      <section class="hero-split container">
+          <div class="hero-text">
+              <h1 class="hero-title">Hello, I’m Selloane <span class="wave">✨</span></h1>
+              <p class="hero-subtitle">Aspiring Business Analyst & Feature Analyst, passionate about bridging the gap between business needs and technology solutions. Currently learning and growing at Standard Bank.</p>
+              <a href="about.html" class="button hero-button">Learn more about me</a>
+          </div>
+          <div class="hero-image">
+              <!-- *** ADD YOUR HEADSHOT IMAGE HERE *** -->
+              <img src="images/myPic.jpg" alt="Selloane Chalale Headshot">
+          </div>
+      </section>
+      <!-- Optional: Add other sections below if needed -->
+  </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© <span id="current-year"></span> Selloane Chalale. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>

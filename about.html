@@ -1,0 +1,97 @@
+<!-- about.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- *** UPDATED TITLE *** -->
+    <title>About Me | Selloane Chalale | Business Analyst</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-content container">
+            <a href="index.html" class="site-title">Selloane Chalale</a>
+            <nav class="main-navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <!-- *** ADDED EDUCATION LINK *** -->
+                    <li><a href="education.html">Education</a></li>
+                    <!-- <li><a href="workexperience.html>">Work Experience</a></li> -->
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="content-section about-page container">
+        <h1 class="page-title">About Me</h1>
+        <div class="about-content">
+            <!-- Optional: Add your headshot image here -->
+            <!-- <img src="images/myPic.jpg" alt="Selloane Chalale" class="about-headshot"> -->
+            <div class="about-text">
+                <!-- *** UPDATED TEXT *** -->
+                <p>
+                    I’m Selloane Chalale, an enthusiastic and analytical individual pursuing a career in Business and Feature Analysis, currently based in Johannesburg South Africa. I thrive on understanding complex business challenges, defining clear requirements, and facilitating the creation of effective technology solutions.
+                </p>
+                <p>
+                    I am currently honing my skills as a <strong>Feature Analyst learner at Standard Bank</strong>. Prior to this, between 2022 and 2024, I worked as a <strong>Data Capturer at Welkom Clinical Trial Centre</strong>, where I honed my attention to detail and gained experience in managing information accurately within structured processes. My background in Computer Science provides a strong technical foundation, enabling effective communication between stakeholders and development teams.
+                </p>
+                 <p>
+                    My academic journey sparked my interest in how technology can solve real-world problems, particularly in areas like AI and IoT security. I believe in leveraging technology thoughtfully and ethically. For more details on my academic qualifications, please see the <a href="education.html">Education</a> page.
+                </p>
+                 <p>
+                    Outside of work and studies, you'll find me journaling, enjoying iced coffee, or keeping up with the latest trends on DevTok! <span class="emoji">💻🧋✨</span>
+                </p>
+
+                <!-- Optional: Update/Add Skills Section Relevant to BA/FA -->
+                
+                <div class="skills-interests-section">
+                    <h2 class="section-title">Skills & Interests</h2>
+                
+                    <h3 class="subsection-title">Key Skills</h3>
+                    <div class="tags-container">
+                        <span class="skill-tag">Requirements Gathering & Analysis</span>
+                        <span class="skill-tag">Process Mapping (Basic)</span>
+                        <span class="skill-tag">Agile Methodologies (Learning)</span>
+                        <span class="skill-tag">User Story Development (Learning)</span>
+                        <span class="skill-tag">Stakeholder Communication</span>
+                        <span class="skill-tag">Problem Solving</span>
+                        <span class="skill-tag">Technical Literacy (C#, Python, SQL Basics)</span>
+                    </div>
+                
+                    <h3 class="subsection-title">Areas of Interest</h3>
+                    <div class="tags-container">
+                        <span class="interest-tag">FinTech</span>
+                        <span class="interest-tag">AI Ethics</span>
+                        <span class="interest-tag">IoT Security</span>
+                    </div>
+                </div>
+
+    <!-- 📄 Resume Button -->
+    <div class="resume-download">
+        <a href="documents/SC_Resume_.pdf" class="resume-btn" target="_blank" download>📄 Download My Resume (PDF)</a>
+    </div>
+               
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© <span id="current-year"></span> Selloane Chalale. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>

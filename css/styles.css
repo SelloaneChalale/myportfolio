@@ -1,0 +1,619 @@
+/* css/styles.css */
+/* --- Global Reset & Base --- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px; /* Base font size */
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.6;
+    color: #333; /* Dark grey for text */
+    background-color: #fdfdfd; /* Slightly off-white background */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Typography --- */
+h1, h2, h3, .site-title, .hero-title, .page-title, .project-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600; /* Slightly bolder Playfair */
+    line-height: 1.2;
+    color: #222; /* Slightly darker for headings */
+}
+
+h1, .hero-title, .page-title { font-size: 2.8rem; margin-bottom: 1rem; }
+h2, .section-title { font-size: 2rem; margin-bottom: 1.5rem; }
+h3, .project-title { font-size: 1.5rem; margin-bottom: 0.75rem; }
+
+p {
+    margin-bottom: 1.25rem;
+    color: #555; /* Slightly softer paragraph text */
+}
+
+a {
+    color: #d99aaa; /* Soft pink accent for links */
+    text-decoration: none;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+a:hover, a:focus {
+    color: #bf8c9a; /* Slightly darker pink on hover */
+}
+
+/* --- Layout Helpers --- */
+.container {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.content-section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+/* --- Header --- */
+.site-header {
+    background-color: #fff;
+    padding: 1rem 0;
+    border-bottom: 1px solid #eee; /* Subtle border */
+    position: sticky; /* Keep header visible */
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03); /* Very subtle shadow */
+}
+
+.site-header .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #333;
+}
+.site-title:hover, .site-title:focus {
+    color: #555;
+}
+
+.main-navigation ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.main-navigation a {
+    color: #666;
+    font-weight: 600;
+    padding: 0.5rem 0;
+    position: relative; /* For the underline */
+}
+
+.main-navigation a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px; /* Position underline slightly below text */
+    width: 0%;
+    height: 2px;
+    background-color: #e8a0af; /* Soft pink underline */
+    transition: width 0.3s ease;
+}
+
+.main-navigation a:hover::after,
+.main-navigation a:focus::after,
+.main-navigation a.active::after {
+    width: 100%;
+}
+
+.main-navigation a.active {
+    color: #333; /* Make active link slightly darker */
+}
+
+.main-navigation a:hover,
+.main-navigation a:focus {
+    color: #333;
+}
+
+/* --- Hero Split Section (index.html) --- */
+.hero-split {
+    display: flex;          /* Arrange text and image side-by-side */
+    align-items: center;    /* Vertically center items */
+    gap: 3rem;              /* Space between text and image */
+    padding-top: 4rem;      /* Space above */
+    padding-bottom: 5rem;     /* Space below */
+    min-height: calc(90vh - 80px); /* Adjust 80px based on header height, ensures space */
+    background-color: #fff; /* Explicitly white background */
+}
+
+.hero-text {
+    flex: 1 1 55%; /* Allow text area to grow/shrink, taking up roughly 55% */
+    /* Reset text colors for light background */
+    color: #333;
+}
+
+.hero-text .hero-title {
+    font-size: 3.2rem; /* Adjust size as needed */
+    color: #222; /* Darker heading color */
+    margin-bottom: 1rem;
+}
+
+.hero-text .hero-subtitle {
+    font-size: 1.2rem;
+    color: #555; /* Slightly softer text color */
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.hero-image {
+    flex: 1 1 40%; /* Allow image area to grow/shrink, roughly 40% */
+    text-align: center; /* Center the image within its container */
+    max-width: 400px; /* Limit max width of image container */
+    margin: 0 auto; /* Helps center the container itself if flex basis isn't exact */
+}
+
+.hero-image img {
+    max-width: 100%;        /* Image won't overflow its container */
+    height: auto;           /* Maintain aspect ratio */
+    border-radius: 50%;     /* Make it a circle */
+    width: 300px;           /* Set specific width for the circle */
+    height: 300px;          /* Set specific height for the circle */
+    object-fit: cover;      /* Crop image nicely to fit the circle */
+    display: block;         /* Remove extra space below image */
+    margin-left: auto;      /* Ensure centering if container is wider */
+    margin-right: auto;     /* Ensure centering if container is wider */
+    border: 5px solid #f8f8f8; /* Optional: Subtle light border */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); /* Optional: Subtle shadow */
+}
+
+/* --- Responsive Adjustments for Hero Split --- */
+@media (max-width: 992px) {
+    .hero-split {
+        gap: 2rem; /* Less gap on medium screens */
+    }
+    .hero-text .hero-title {
+        font-size: 2.8rem;
+    }
+     .hero-image img {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .hero-split {
+        flex-direction: column-reverse; /* Stack: image below text */
+        text-align: center;     /* Center text when stacked */
+        padding-top: 3rem;
+        padding-bottom: 4rem;
+        min-height: auto; /* Remove fixed min-height */
+    }
+
+    .hero-text {
+        flex-basis: auto; /* Reset flex basis */
+        width: 100%;    /* Take full width */
+        margin-bottom: 2rem; /* Add space below text when stacked */
+    }
+
+    .hero-image {
+        flex-basis: auto; /* Reset flex basis */
+        width: auto;    /* Let image size dictate container */
+         max-width: 280px; /* Control max image size */
+         margin-bottom: 0; /* Remove bottom margin */
+    }
+    .hero-image img {
+        width: 220px;       /* Adjust circle size for mobile */
+        height: 220px;      /* Adjust circle size for mobile */
+    }
+
+     .hero-text .hero-subtitle {
+         font-size: 1.1rem;
+     }
+}
+
+.wave { display: inline-block; animation: wave-animation 2s infinite; transform-origin: 70% 70%; }
+@keyframes wave-animation {
+    0% { transform: rotate( 0.0deg) }
+   10% { transform: rotate(14.0deg) }
+   20% { transform: rotate(-8.0deg) }
+   30% { transform: rotate(14.0deg) }
+   40% { transform: rotate(-4.0deg) }
+   50% { transform: rotate(10.0deg) }
+   60% { transform: rotate( 0.0deg) }
+  100% { transform: rotate( 0.0deg) }
+}
+
+/* --- Buttons --- */
+.button, .hero-button {
+    display: inline-block;
+    background-color: #e8a0af; /* Soft pink */
+    color: #fff;
+    padding: 0.8rem 1.8rem;
+    border-radius: 30px; /* Rounded button */
+    font-weight: 600;
+    font-size: 1rem;
+    border: 2px solid #e8a0af;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+.button:hover, .hero-button:hover {
+    background-color: #fff;
+    color: #e8a0af;
+    transform: translateY(-2px);
+}
+
+/* --- About Page --- */
+.about-page .page-title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.about-content {
+    display: flex; /* For side-by-side image and text if needed */
+    flex-direction: column; /* Default stack */
+    gap: 2rem;
+    max-width: 800px; /* Constrain text width */
+    margin: 0 auto; /* Center the content */
+}
+
+.about-headshot { /* Style if you add an image */
+    max-width: 250px;
+    height: auto;
+    border-radius: 8px; /* Softly rounded corners */
+    margin: 0 auto 1rem auto; /* Center if stacked */
+    /* Or align-self: flex-start; if using row layout */
+}
+
+.skills-list { /* Optional skills list styling */
+    list-style: none;
+    padding-left: 0;
+    margin-top: 2rem;
+}
+.skills-list li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+.skills-list li::before {
+    content: '▹'; /* Simple bullet */
+    position: absolute;
+    left: 0;
+    color: #e8a0af; /* Accent color */
+    font-weight: bold;
+}
+
+
+/* --- Projects Page --- */
+.projects-page .page-title,
+.projects-intro {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.projects-intro p {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3rem;
+    color: #666;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Responsive grid */
+    gap: 2.5rem;
+}
+
+.project-card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #eee;
+    display: flex; /* Use flexbox for vertical layout */
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.project-card img {
+    display: block;
+    width: 100%;
+    height: 220px; /* Fixed height for images */
+    object-fit: cover; /* Cover ensures image fills space */
+    border-bottom: 1px solid #eee;
+}
+
+.project-card .card-content {
+    padding: 1.5rem;
+    flex-grow: 1; /* Allow content to grow */
+    display: flex;
+    flex-direction: column; /* Stack content inside card */
+}
+
+.project-description {
+    font-size: 0.95rem;
+    color: #555;
+    flex-grow: 1; /* Push tags/links down */
+    margin-bottom: 1.5rem;
+}
+
+.project-tags {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.project-tags span {
+    background-color: #f5f5f5;
+    color: #777;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.8rem;
+    border-radius: 4px;
+    border: 1px solid #eee;
+}
+
+.project-links a.link-button {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-right: 1rem;
+    padding: 0.3rem 0;
+    border-bottom: 2px solid transparent;
+    color: #d99aaa; /* Use accent */
+}
+
+.project-links a.link-button:hover {
+    border-bottom-color: #d99aaa;
+}
+
+
+/* --- Contact Page --- */
+.contact-page .page-title,
+.contact-intro {
+    text-align: center;
+}
+.contact-intro {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3rem;
+    color: #666;
+}
+.contact-details {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+.contact-item {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+.contact-item strong {
+    font-weight: 600;
+    color: #333;
+    margin-right: 0.5rem;
+}
+
+/* --- Footer --- */
+.site-footer {
+    background-color: #f9f9f9; /* Slightly different neutral */
+    color: #777;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 4rem; /* Space above footer */
+    border-top: 1px solid #eee;
+    font-size: 0.9rem;
+}
+.site-footer p {
+    margin-bottom: 0.5rem;
+}
+.site-footer a {
+    color: #777;
+    text-decoration: underline;
+    text-decoration-color: #ccc;
+}
+.site-footer a:hover {
+    color: #555;
+    text-decoration-color: #aaa;
+}
+
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    html { font-size: 15px; } /* Slightly smaller base font */
+
+    .container { padding-left: 1rem; padding-right: 1rem; }
+
+    .site-header .header-content {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    .main-navigation ul {
+        gap: 1.5rem;
+        justify-content: center;
+        flex-wrap: wrap; /* Allow nav items to wrap */
+    }
+
+    h1, .hero-title, .page-title { font-size: 2.2rem; }
+    h2, .section-title { font-size: 1.8rem; }
+    h3, .project-title { font-size: 1.3rem; }
+
+    .hero { min-height: calc(100vh - 100px); /* Adjust for potentially taller header */ } /* Adjust hero height */
+    .hero-title { font-size: 2.5rem; }
+    .hero-subtitle { font-size: 1.1rem; }
+
+    .project-grid {
+        grid-template-columns: 1fr; /* Stack cards */
+        gap: 2rem;
+    }
+
+    .about-content {
+        flex-direction: column; /* Ensure stacking */
+    }
+    .about-headshot {
+        max-width: 200px; /* Smaller headshot */
+    }
+
+    .content-section { padding-top: 3rem; padding-bottom: 3rem; }
+    .site-footer { margin-top: 3rem; }
+}
+
+@media (max-width: 480px) {
+    .main-navigation ul { gap: 1rem; }
+    .main-navigation a { font-size: 0.9rem; }
+}
+
+/* --- Education Page --- */
+.education-page .page-title {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* Style for subheadings like "University Education", "Certifications" */
+.education-page .section-title {
+   margin-top: 3.5rem; /* More space above section titles */
+   margin-bottom: 1.5rem;
+   text-align: left; /* Align section titles left */
+   font-size: 1.8rem; /* Slightly smaller than page title */
+   font-family: 'Playfair Display', serif; /* Match other headings */
+   color: #444;
+   border-bottom: 2px solid #e8a0af; /* Accent color underline */
+   padding-bottom: 0.5rem;
+   display: inline-block; /* Keep underline only under text */
+}
+
+/* Style for each degree/certificate entry */
+.education-entry {
+  background-color: #fff;
+  padding: 1.5rem 2rem; /* More padding */
+  margin-bottom: 1.5rem;
+  border-radius: 6px; /* Slightly softer radius */
+  border: 1px solid #eee; /* Subtle border */
+  box-shadow: 0 3px 10px rgba(0,0,0,0.04); /* Very subtle shadow */
+  transition: box-shadow 0.3s ease;
+}
+
+.education-entry:hover {
+   box-shadow: 0 5px 15px rgba(0,0,0,0.07); /* Slightly more shadow on hover */
+}
+
+.education-entry h3 {
+   margin-top: 0;
+   margin-bottom: 0.3rem; /* Less space below title */
+   font-size: 1.3rem; /* Degree/Cert Title Size */
+   font-family: 'Lato', sans-serif; /* Use Lato for clarity */
+   font-weight: 700; /* Bold Lato */
+   color: #333;
+}
+
+.education-entry .institution {
+   font-weight: 600;
+   color: #555; /* Institution name color */
+   margin-bottom: 0.3rem;
+   font-size: 1rem;
+}
+
+.education-entry .dates {
+   font-size: 0.9rem;
+   color: #777; /* Dates color */
+   margin-bottom: 0.75rem; /* Space below dates */
+}
+
+.education-entry .details { /* Optional key modules/notes */
+  font-size: 0.95rem;
+  color: #666;
+  margin-top: 0.75rem; /* Space above details */
+  line-height: 1.5;
+  padding-left: 1rem; /* Indent details slightly */
+  border-left: 2px solid #f0f0f0; /* Subtle left border */
+}
+
+/* Style for verification link */
+.education-entry .link-button {
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-top: 0.5rem; /* Space above link */
+  display: inline-block; /* Correct display for link */
+  color: #d99aaa; /* Use accent */
+  border-bottom: 2px solid transparent;
+}
+.education-entry .link-button:hover {
+   border-bottom-color: #d99aaa;
+}
+
+/* Responsive adjustments for education page if needed */
+@media (max-width: 768px) {
+  .education-page .section-title {
+      font-size: 1.6rem;
+      margin-top: 2.5rem;
+  }
+  .education-entry {
+      padding: 1.2rem 1.5rem;
+  }
+  .education-entry h3 {
+      font-size: 1.2rem;
+  }
+}
+.section-title {
+    font-size: 1.8rem;
+    margin-top: 2rem;
+    font-family: 'Playfair Display', serif;
+    color: #333;
+  }
+  
+  .experience-entry, .education-entry {
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #eaeaea;
+  }
+  
+  .resume-download {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+  .resume-btn {
+    background-color: #f2f2f2;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #444;
+    transition: background-color 0.3s ease;
+  }
+  
+  .resume-btn:hover {
+    background-color: #dedede;
+  }
+  
+  .tags-container { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px; }
+.skill-tag, .interest-tag {
+    display: inline-block; /* Or just rely on flex */
+    padding: 5px 12px;
+    border-radius: 15px; /* Adjust for roundness */
+    background-color: #f0f0f0; /* Example: Light gray - CHOOSE YOUR PALETTE */
+    color: #333; /* Example text color */
+    font-size: 0.9em;
+    margin-bottom: 5px; /* If not using gap */
+    /* Add subtle border? box-shadow? */
+}
+.subsection-title { margin-top: 15px; margin-bottom: 10px; font-weight: 600; /* Adjust */ }

@@ -1,0 +1,89 @@
+<!-- projects.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- *** UPDATED TITLE *** -->
+    <title>Academic Projects | Selloane Chalale</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-content container">
+            <a href="index.html" class="site-title">Selloane Chalale</a>
+            <nav class="main-navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html" class="active">Projects</a></li>
+                    <!-- *** ADDED EDUCATION LINK *** -->
+                    <li><a href="education.html">Education</a></li>
+                    <!-- <li><a href="workexperience.html>">Work Experience</a></li> -->
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="content-section projects-page container">
+        <section class="projects-intro">
+            <!-- *** UPDATED TITLE AND TEXT *** -->
+            <h1 class="page-title">Academic Projects <span class="emoji">📚</span></h1>
+            <p>These projects were undertaken during my Computer Science studies at the University of Pretoria. They demonstrate my ability to apply technical concepts and analytical thinking to solve defined problems.</p>
+        </section>
+
+        <section class="project-grid">
+            <!-- Project Card 1 -->
+            <div class="project-card">
+                <!-- <img src="images/project-placeholder-1.png" alt="AI Threat Detection Preview"> -->
+                <div class="card-content">
+                    <h3 class="project-title">AI Threat Detection System (Academic)</h3>
+                    <!-- *** REPHRASED DESCRIPTION *** -->
+                    <p class="project-description">Analyzed requirements and explored the concept of using Machine Learning with IoT sensor data to identify potential security threats. Focused on defining data needs and system interaction flows.</p>
+                    <div class="project-tags">
+                        <span>Python</span> <span>Scikit-learn</span> <span>IoT Concepts</span> <span>System Analysis</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/SelloaneChalale/IoT-Security-Project" target="_blank" class="link-button">View Code (GitHub)</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 2 -->
+            <div class="project-card">
+                <!-- <img src="images/project-placeholder-2.png" alt="Blockchain IoT Framework Preview"> -->
+                <div class="card-content">
+                    <h3 class="project-title">Blockchain IoT Framework Concept (Academic)</h3>
+                     <!-- *** REPHRASED DESCRIPTION *** -->
+                    <p class="project-description">Investigated the potential application of blockchain technology for secure data sharing between IoT devices. Involved defining use cases and high-level system requirements.</p>
+                    <div class="project-tags">
+                        <span>Blockchain Concepts</span> <span>Solidity (Basic)</span> <span>IoT Security</span> <span>Requirements Definition</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/SelloaneChalale/IoT-Security-Project" target="_blank" class="link-button">View Code (GitHub)</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add More Academic Project Cards As Needed -->
+
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© <span id="current-year"></span> Selloane Chalale. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
